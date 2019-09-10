@@ -15,7 +15,7 @@ services:
       U_ID: 1030
     volumes:  
       - type: bind
-        source: /home/orange/myzookeeper_04
+        source: /home/orange/myzookeeper
         target: /logs
 
   zoo2:
@@ -32,7 +32,7 @@ services:
       U_ID: 1030
     volumes:  
       - type: bind
-        source: /home/orange/myzookeeper_04
+        source: /home/orange/myzookeeper
         target: /logs
 
   zoo3:
@@ -49,5 +49,5 @@ services:
       U_ID: 1030
     volumes:  
       - type: bind
-        source: /home/orange/myzookeeper_04
+        source: /home/orange/myzookeeper
         target: /logs
