@@ -21,10 +21,15 @@ metrics turned on by default. metricbeat knows the end points to collect metrics
 metricbeat configuration:
 
 module: zookeeper
+
 enabled: true
+
 metricsets: ["mntr"]
+
 period: 10s
+
 hosts: ["localhost:2181", "localhost:2182", "localhost:2183"]
+
   
 5. zookeeper config file ( "$ZOO_CONF_DIR/zoo.cfg")
 
