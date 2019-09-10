@@ -15,11 +15,11 @@ $ docker stack deploy -c stack.yml zookeeper
 
 3. zookeeper logs:
 
-By default, zookeeper container writes logs to stdout. To change this to write to log file, set the environment variable ZOO_LOG4J_PROP to INFO,ROLLINGFILE. This can be done in stack.yml. This will write the logs in "/logs" folder in the container. This can be mapped to host folder ( eg., /home/orange/myzookeeper) using a bind mount in stack.yml file. To solve the folder permission problem, make necessary changes in the docker_entrypoint.sh present in the root folder of the container and overwrite it in the Dockerfile.
+By default, zookeeper container writes logs to stdout. To change this to write to log file, set the environment variable ZOO_LOG4J_PROP to INFO,ROLLINGFILE. This can be done in stack.yml. This will write the logs in "/logs" folder in the container. This can be mapped to host folder ( eg., /home/orange/myzookeeper) using a bind mount in stack.yml file.  The myzookeeper folder on the host should be available before deploying zookeeper. To solve the folder permission problem, make necessary changes in the docker_entrypoint.sh present in the root folder of the container and overwrite it in the Dockerfile.
 
 4. zookeeper metrics:
 
-metrics turned on by default. metricbeat knows the end points to collect metrics.
+metrics turned on by default. metricbeat knows the end points to collect metrics. metricbeat is installed on the docker host. It collects metrics from the ports 2181, 2182 & 2183, which are linked to container port 2181 respectively. Metricbeat has to be run on all docker hosts in the swarm.
 
 metricbeat configuration:
 
