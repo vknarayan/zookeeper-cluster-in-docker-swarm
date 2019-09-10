@@ -20,7 +20,7 @@ metrics turned on by default. metricbeat knows the end points to collect metrics
 
 metricbeat configuration:
 
-#-------------------------------- zookeeper Module ---------------------------------
+#zookeeper Module
 - module: zookeeper
   enabled: true
   metricsets: ["mntr"]
